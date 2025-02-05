@@ -3,10 +3,10 @@ This is a simple flask app to use as reference.
 
 
 An app will typically have many files, but these are the 4 main files:
-> app.py: To behave as our WSGI web application framework.
-> index.html: To behave as our HTML document.
-> styles.css: To behave as our styling file.
-> script.js: To behave as our interactice site scripting.
+> -app.py: To behave as our WSGI web application framework.
+> -index.html: To behave as our HTML document.
+> -styles.css: To behave as our styling file.
+> -script.js: To behave as our interactice site scripting.
 
 The index.html has a textarea element to document different events that
 occur while the HTML page is parsed and loaded.
