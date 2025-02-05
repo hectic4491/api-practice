@@ -1,4 +1,4 @@
-This is a simple flask app to use as reference.
+This is a simple flask app to use as personal reference and practice with web development.
 
 
 
