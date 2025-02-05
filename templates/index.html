@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/static/styles.css">
+    <title>Flask Site Outline</title>
+  </head>
+
+  <body>
+
+    <div class="section">
+      <div class="controls">
+        <button id="reload" type="button">Reload</button>
+      </div>
+
+      <div class="event-log">
+        <label for="eventLog">Event Log:</label>
+        <textarea
+          readonly
+          class="event-log-contents"
+          rows="8"
+          cols="30"
+          id="eventLog">
+        </textarea>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="controls">
+        <button id="getLocation" type="button">Get location</button>
+      </div>
+
+      <div class="location-log">
+        <label for="locationLog">Location Log:</label>
+        <textarea
+          readonly
+          class="location-log-contents"
+          rows="8"
+          cols="30"
+          id="locationLog">
+        </textarea>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="controls">
+        <label for="pokeName">Pokemon Name:</label>
+        <input type="text" id="pokeName" name="pokeName"> 
+        <button id="showPokemon" type="button">Show Pokemon</button>
+      </div>
+      <div id="pokemonPicBox">
+
+      </div>
+    </div>
+
+    <div class="section">
+      <label for="glCanvas">Canvas:</label>
+      <canvas id="glCanvas" width="400" height="300"></canvas>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gl-matrix/2.8.1/gl-matrix.js"></script>
+    <script src="/static/script.js"></script>
+
+
+  </body>
+
+</html>
