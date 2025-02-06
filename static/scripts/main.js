@@ -1,6 +1,8 @@
 // Load JavaScript files:
-loadScript('static/script.js');
-loadScript('static/file2.js');
+loadScript('static/scripts/event-log.js');
+loadScript('static/scripts/location-log.js');
+loadScript('static/scripts/pokemon-fetch.js');
+loadScript('static/scripts/webgl-draw.js');
 //...
 
 

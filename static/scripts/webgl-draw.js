@@ -1,14 +1,5 @@
-console.log("Script Running.")
+console.log("webgl-draw.js loaded.")
 
-const reload = document.querySelector("#reload");
-const eventLog = document.querySelector("#eventLog");
-
-const getLocation = document.querySelector("#getLocation");
-const locationLog = document.querySelector("#locationLog");
-
-const pokeName = document.querySelector("#pokeName");
-const showPokemon = document.querySelector("#showPokemon");
-const pokemonPicBox = document.querySelector("#pokemonPicBox");
 
 // get the canvas element
 const canvas = document.getElementById("glCanvas");
@@ -18,66 +9,6 @@ const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl')
 if (!gl) {
   alert('Unable to initialize WebGL. Your browser may not support it.');
 }
-
-
-// Reload button
-reload.addEventListener("click", () => {
-  eventLog.textContent = "";
-  setTimeout(() => {
-    window.location.reload(true);
-  }, 200);
-});
-
-
-// Loading Event Listeners
-window.addEventListener("load", (event) => {
-  eventLog.textContent += "load\n";
-});
-
-document.addEventListener("readystatechange", (event) => {
-  eventLog.textContent += `readystate: ${document.readyState}\n`;
-});
-
-document.addEventListener("DOMContentLoaded", (event) => {
-  eventLog.textContent += "DOMContentLoaded\n"
-})
-
-
-// Get location button
-getLocation.addEventListener("click", () => {
-  navigator.geolocation.getCurrentPosition(
-    // position => locationLog.textContent
-    position => {
-      let latitude = position.coords["latitude"];
-      let longitude = position.coords["longitude"];
-      locationLog.textContent += `latitude: ${latitude}\n longitude: ${longitude}\n`;
-    },
-    error => console.error(error)
-  )
-});
-
-
-// Show Pokemon button
-showPokemon.addEventListener("click", () => {
-  let pokemonName = pokeName.value.toLowerCase();
-  let URL = "https://pokeapi.co/api/v2/pokemon/" + pokemonName;
-  
-  fetch(URL)
-  .then(response => response.json())
-  .then(data => {
-    if (document.getElementById("pokemonPicture")) {
-      let child = document.getElementById("pokemonPicture");
-      pokemonPicBox.removeChild(child);
-    };
-    let sprite = data.sprites.front_default;
-    let img = document.createElement('img');
-    img.alt = `A picture of the Pokemon named ${pokemonName}.`;
-    img.src = sprite;
-    img.id = "pokemonPicture";
-    pokemonPicBox.appendChild(img);
-  })
-  .catch((error) => console.error(error));
-});
 
 
 // WebGl Canvas
@@ -268,4 +199,3 @@ function main() {
 }
 
 main();
-
